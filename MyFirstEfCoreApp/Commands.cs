@@ -1,7 +1,4 @@
-﻿// Copyright (c) 2020 Jon P Smith, GitHub: JonPSmith, web: http://www.thereformedprogrammer.net/
-// Licensed under MIT license. See License.txt in the project root for license information.
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
@@ -67,7 +64,7 @@ namespace MyFirstEfCoreApp
             using (var db = new AppDbContext())
             {
                 var serviceProvider = db.GetInfrastructure();
-                var loggerFactory = (ILoggerFactory) serviceProvider.GetService(typeof(ILoggerFactory));
+                var loggerFactory = (ILoggerFactory)serviceProvider.GetService(typeof(ILoggerFactory));
                 loggerFactory.AddProvider(new MyLoggerProvider(logs));
 
                 foreach (var entity in
@@ -101,7 +98,7 @@ namespace MyFirstEfCoreApp
             using (var db = new AppDbContext())
             {
                 var serviceProvider = db.GetInfrastructure();
-                var loggerFactory = (ILoggerFactory) serviceProvider.GetService(typeof(ILoggerFactory));
+                var loggerFactory = (ILoggerFactory)serviceProvider.GetService(typeof(ILoggerFactory));
                 loggerFactory.AddProvider(new MyLoggerProvider(logs));
 
                 var singleBook = db.Books

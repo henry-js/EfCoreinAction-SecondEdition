@@ -1,23 +1,18 @@
-﻿// Copyright (c) 2020 Jon P Smith, GitHub: JonPSmith, web: http://www.thereformedprogrammer.net/
-// Licensed under MIT license. See License.txt in the project root for license information.
-
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace MyFirstEfCoreApp
 {
     public class AppDbContext : DbContext
     {
         private const string ConnectionString = //#A
-            @"Server=(localdb)\mssqllocaldb;
-             Database=MyFirstEfCoreDb;
-             Trusted_Connection=True";
+            @"Data Source=MyFirstEfCoreApp.db";
 
         public DbSet<Book> Books { get; set; }
 
         protected override void OnConfiguring(
             DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(ConnectionString); //#B
+            optionsBuilder.UseSqlite(ConnectionString); //#B
         }
     }
 
