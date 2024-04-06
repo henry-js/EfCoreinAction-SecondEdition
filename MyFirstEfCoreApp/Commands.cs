@@ -10,6 +10,13 @@ namespace MyFirstEfCoreApp
 {
     public static class Commands
     {
+
+        internal static void GetOne()
+        {
+            using var db = new AppDbContext();
+            var firstBook = db.Books.First();
+        }
+
         public static void ListAll()
         {
             using (var db = new AppDbContext()) //#A

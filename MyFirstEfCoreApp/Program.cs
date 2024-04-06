@@ -27,6 +27,9 @@ do
         case "r":
             Commands.WipeCreateSeed(false);
             break;
+        case "g":
+            Commands.GetOne();
+            break;
         case "e":
             return;
         default:
